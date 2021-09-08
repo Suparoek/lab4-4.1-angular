@@ -8,23 +8,16 @@ import { CatalogModule } from './catalog/catalog.module';
 import { ProductListComponent } from './catalog/product-list/product-list.component';
 import { HomeModule } from './home/home.module';
 import { NavbarComponent } from './home/navbar/navbar.component';
-const routes: Routes = [
-  {
-    path:'hoem',
-    component: NavbarComponent
-  },
-  {
-    path:'products',
-    component: ProductListComponent
-  },
-  
- ];
+import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
-    BrowserModule,CatalogModule,HomeModule,RouterModule.forRoot(routes),
+    BrowserModule,CatalogModule,HomeModule,AppRoutingModule, BrowserAnimationsModule,MatButtonModule
   ],
   providers: [BackendService],
   bootstrap: [AppComponent]
